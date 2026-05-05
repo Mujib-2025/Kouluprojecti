@@ -56,7 +56,12 @@
   <body>
     <header>
       <h1>My Shop</h1>
-      <div>Cart: <span id="cart-count">0</span></div>
+
+      <div onclick="openCart()" style="cursor: pointer">
+        Cart: <span id="cart-count">0</span> | Total: €<span id="cart-total"
+          >0</span
+        >
+      </div>
     </header>
 
     <main>
@@ -64,60 +69,109 @@
         <div class="product">
           <h3>Item 1</h3>
           <p>€10</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 1', 10)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 2</h3>
           <p>€15</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 2', 15)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 3</h3>
           <p>€12</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 3', 12)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 4</h3>
           <p>€8</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 4', 8)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 5</h3>
           <p>€20</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 5', 20)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 6</h3>
           <p>€5</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 6', 5)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 7</h3>
           <p>€18</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 7', 18)">Add</button>
         </div>
 
         <div class="product">
           <h3>Item 8</h3>
           <p>€22</p>
-          <button onclick="addToCart()">Add</button>
+          <button onclick="addToCart('Item 8', 22)">Add</button>
         </div>
       </div>
     </main>
 
     <script>
-      let cart = 0;
+      let cart = [];
+      let total = 0;
 
-      function addToCart() {
-        cart++;
-        document.getElementById("cart-count").textContent = cart;
+      function addToCart(name, price) {
+        cart.push({ name, price });
+        total += price;
+
+        updateUI();
+      }
+
+      function updateUI() {
+        document.getElementById("cart-count").textContent = cart.length;
+        document.getElementById("cart-total").textContent = total;
+        document.getElementById("modal-total").textContent = total;
+
+        const cartItems = document.getElementById("cart-items");
+        cartItems.innerHTML = "";
+
+        cart.forEach((item) => {
+          const div = document.createElement("div");
+          div.style.marginBottom = "8px";
+          div.textContent = item.name + " - €" + item.price;
+          cartItems.appendChild(div);
+        });
+      }
+
+      function openCart() {
+        document.getElementById("cart-modal").style.display = "block";
+      }
+
+      function closeCart() {
+        document.getElementById("cart-modal").style.display = "none";
       }
     </script>
+    <div
+      id="cart-modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100%;
+        background: #222;
+        padding: 15px;
+        overflow-y: auto;
+      "
+    >
+      <h2>Your Cart</h2>
+
+      <div id="cart-items"></div>
+
+      <p>Total: €<span id="modal-total">0</span></p>
+
+      <button onclick="closeCart()">Close</button>
+    </div>
   </body>
 </html>
