@@ -4,174 +4,170 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kauppa projecti</title>
-
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: rgb(102, 102, 171);
-        color: white;
-      }
-
-      header {
-        background: #222;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 15px;
-        padding: 20px;
-      }
-
-      .product {
-        background: #333;
-        padding: 10px;
-        border-radius: 10px;
-        text-align: center;
-      }
-
-      .product h3 {
-        margin: 10px 0 5px;
-      }
-
-      button {
-        margin-top: 10px;
-        padding: 6px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-      }
-
-      button:hover {
-        background: #ddd;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
       <h1>My Shop</h1>
-
       <div onclick="openCart()" style="cursor: pointer">
-        Cart: <span id="cart-count">0</span> | Total: €<span id="cart-total"
-          >0</span
-        >
+        Cart:
+        <span id="cart-count">0</span>
+        | Total: €
+        <span id="cart-total">0</span>
       </div>
     </header>
 
     <main>
+      <div class="top-bar">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search..."
+          onkeyup="searchProducts()"
+        />
+
+        <br />
+        <button onclick="filterProducts('home')">Home</button>
+        <button onclick="filterProducts('shirts')">Shirts</button>
+        <button onclick="filterProducts('pants')">Pants</button>
+        <button onclick="filterProducts('shoes')">Shoes</button>
+      </div>
+
       <div class="products">
-        <div class="product">
-          <h3>Item 1</h3>
+        <div class="product" data-category="shirts">
+          <h3>Blue Shirt</h3>
           <p>€10</p>
-          <button onclick="addToCart('Item 1', 10)">Add</button>
+
+          <button onclick="addToCart('Blue Shirt', 10)">Add</button>
         </div>
 
-        <div class="product">
-          <h3>Item 2</h3>
+        <div class="product" data-category="shirts">
+          <h3>Black Hoodie</h3>
           <p>€15</p>
-          <button onclick="addToCart('Item 2', 15)">Add</button>
+          <button onclick="addToCart('Black Hoodie', 15)">Add</button>
         </div>
 
-        <div class="product">
-          <h3>Item 3</h3>
+        <div class="product" data-category="shirts">
+          <h3>White Shirt</h3>
           <p>€12</p>
-          <button onclick="addToCart('Item 3', 12)">Add</button>
+          <button onclick="addToCart('White Shirt', 12)">Add</button>
         </div>
 
-        <div class="product">
-          <h3>Item 4</h3>
-          <p>€8</p>
-          <button onclick="addToCart('Item 4', 8)">Add</button>
-        </div>
-
-        <div class="product">
-          <h3>Item 5</h3>
-          <p>€20</p>
-          <button onclick="addToCart('Item 5', 20)">Add</button>
-        </div>
-
-        <div class="product">
-          <h3>Item 6</h3>
-          <p>€5</p>
-          <button onclick="addToCart('Item 6', 5)">Add</button>
-        </div>
-
-        <div class="product">
-          <h3>Item 7</h3>
+        <div class="product" data-category="shirts">
+          <h3>Green Hoodie</h3>
           <p>€18</p>
-          <button onclick="addToCart('Item 7', 18)">Add</button>
+          <button onclick="addToCart('Green Hoodie', 18)">Add</button>
         </div>
 
-        <div class="product">
-          <h3>Item 8</h3>
+        <div class="product" data-category="shirts">
+          <h3>Red Jacket</h3>
+          <p>€25</p>
+          <button onclick="addToCart('Red Jacket', 25)">Add</button>
+        </div>
+
+        <div class="product" data-category="pants">
+          <h3>Gray Pants</h3>
+          <p>€12</p>
+          <button onclick="addToCart('Gray Pants', 12)">Add</button>
+        </div>
+
+        <div class="product" data-category="pants">
+          <h3>Blue Jeans</h3>
+          <p>€8</p>
+          <button onclick="addToCart('Blue Jeans', 8)">Add</button>
+        </div>
+
+        <div class="product" data-category="pants">
+          <h3>Black Jeans</h3>
+          <p>€14</p>
+          <button onclick="addToCart('Black Jeans', 14)">Add</button>
+        </div>
+
+        <div class="product" data-category="pants">
+          <h3>Sport Pants</h3>
+          <p>€20</p>
+          <button onclick="addToCart('Sport Pants', 20)">Add</button>
+        </div>
+
+        <div class="product" data-category="pants">
+          <h3>Shorts</h3>
+          <p>€9</p>
+          <button onclick="addToCart('Shorts', 9)">Add</button>
+        </div>
+
+        <div class="product" data-category="shoes">
+          <h3>Running Shoes</h3>
+          <p>€20</p>
+          <button onclick="addToCart('Running Shoes', 20)">Add</button>
+        </div>
+
+        <div class="product" data-category="shoes">
+          <h3>Sport Shoes</h3>
+          <p>€5</p>
+          <button onclick="addToCart('Sport Shoes', 5)">Add</button>
+        </div>
+
+        <div class="product" data-category="shoes">
+          <h3>White Sneakers</h3>
           <p>€22</p>
-          <button onclick="addToCart('Item 8', 22)">Add</button>
+          <button onclick="addToCart('White Sneakers', 22)">Add</button>
+        </div>
+
+        <div class="product" data-category="shoes">
+          <h3>Black Boots</h3>
+          <p>€30</p>
+          <button onclick="addToCart('Black Boots', 30)">Add</button>
+        </div>
+
+        <div class="product" data-category="shoes">
+          <h3>Sandals</h3>
+          <p>€11</p>
+          <button onclick="addToCart('Sandals', 11)">Add</button>
+        </div>
+
+        <div class="product" data-category="home">
+          <h3>Chair</h3>
+          <p>€18</p>
+          <button onclick="addToCart('Chair', 18)">Add</button>
+        </div>
+
+        <div class="product" data-category="home">
+          <h3>Table</h3>
+          <p>€40</p>
+          <button onclick="addToCart('Table', 40)">Add</button>
+        </div>
+
+        <div class="product" data-category="home">
+          <h3>Lamp</h3>
+          <p>€13</p>
+          <button onclick="addToCart('Lamp', 13)">Add</button>
+        </div>
+
+        <div class="product" data-category="home">
+          <h3>Bed</h3>
+          <p>€60</p>
+          <button onclick="addToCart('Bed', 60)">Add</button>
+        </div>
+
+        <div class="product" data-category="home">
+          <h3>Clock</h3>
+          <p>€7</p>
+          <button onclick="addToCart('Clock', 7)">Add</button>
         </div>
       </div>
     </main>
 
-    <script>
-      let cart = [];
-      let total = 0;
-
-      function addToCart(name, price) {
-        cart.push({ name, price });
-        total += price;
-
-        updateUI();
-      }
-
-      function updateUI() {
-        document.getElementById("cart-count").textContent = cart.length;
-        document.getElementById("cart-total").textContent = total;
-        document.getElementById("modal-total").textContent = total;
-
-        const cartItems = document.getElementById("cart-items");
-        cartItems.innerHTML = "";
-
-        cart.forEach((item) => {
-          const div = document.createElement("div");
-          div.style.marginBottom = "8px";
-          div.textContent = item.name + " - €" + item.price;
-          cartItems.appendChild(div);
-        });
-      }
-
-      function openCart() {
-        document.getElementById("cart-modal").style.display = "block";
-      }
-
-      function closeCart() {
-        document.getElementById("cart-modal").style.display = "none";
-      }
-    </script>
-    <div
-      id="cart-modal"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 300px;
-        height: 100%;
-        background: #222;
-        padding: 15px;
-        overflow-y: auto;
-      "
-    >
+    <div id="cart-modal">
       <h2>Your Cart</h2>
-
       <div id="cart-items"></div>
 
-      <p>Total: €<span id="modal-total">0</span></p>
-
+      <p>
+        Total: €
+        <span id="modal-total">0</span>
+      </p>
       <button onclick="closeCart()">Close</button>
     </div>
+    <script src="java.js"></script>
   </body>
 </html>
