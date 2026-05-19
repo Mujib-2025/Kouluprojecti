@@ -1,0 +1,53 @@
+Projekti käsittelee verkkopohjaista vaatekauppaa sivustoa, jossa käyttäjät voivat luoda tunnuksia ja 
+kirjautua sisään Firebase Authenticationin avulla. Käyttäjätiedot tallennetaan käyttäjän 
+Firebase autentikointiin liittyvän sähköpostin ja käyttäjä-ID alle. Käyttäjiltä tallennetaan seuraavat tiedot: 
+ostoskoriin lisätyt tuotteet, kokonaishinta, ostetut tuotteet sekä contact kautta lähetetyt raportit ja ehdotukset.
+
+Projektia voidaan käyttää sekä HTML Live Serverin kautta VS Codessa että paikallisesti 
+terminaalin kautta komennolla node server.js.
+
+Projektin kehityksen aikana ilmeni joitakin virheitä ja haastavia vaiheita. 
+Suurin haaste oli Firestoren oikea käyttöönotto yhdessä funktioiden kanssa, 
+ja siihen kului eniten aikaa. Monien tuntien työskentelyn jälkeen ongelmat sain lopulta ratkaistua, 
+osittain aiemman Firebase Console kokemukseni ansiosta omista projekteistani.
+
+Tein koko projektin itse. Asensin Node.js ja Expressin terminaalin kautta 
+ja käytin Gemini kuvageneraattoria väliaikaisiin tuotekuviin, koska kyseessä on oppimisprojekti 
+eikä kymmenien tuotekuvien tekeminen käsin ollut projektin tavoitteiden kannalta järkevää.
+
+Tavoitteeni oli tehdä verkkosivustosta tumman sävyinen, moderni ja 
+selkeä käyttämällä tummempia värejä sekä yksinkertaisempaa ulkoasua, 
+jotta sivusto näyttäisi nykyaikaiselta ja tarjoaisi paremman käyttökokemuksen.
+
+Vaikka olin jo aiemmin oppinut Firebasea omien projektieni kautta ja tiesin, 
+miten tietokantoja otetaan käyttöön, tämä projekti auttoi minua ymmärtämään paljon syvemmin backend rakennetta, 
+autentikointia, Firestore yhteyksiä ja projektin organisointia.
+
+Käytin myös ChatGPTä oppimisen työkaluna samalla tavalla kuin "kaikki" opiskelijat meidän ryhmässä käyttävät jo tekoälytyökaluja. 
+En käyttänyt ChatGPTä yksinkertaisiin copy paste ratkaisuihin, 
+vaan hyödynsin sitä vaihe vaiheelta opettajan kaltaisena tukena koko viiden sprintin prosessin ajan ymmärtääkseni 
+mitä olin tekemässä ja miksi. Tekoäly ei voi suoraan rakentaa tai suorittaa projekteja VS Codessa, Firebasessa 
+tai omassa järjestelmässäni, vaan se voi ainoastaan ohjata ja selittää vaiheita. 
+Toteutus, virheiden korjaaminen, asetukset, testaus ja asioiden ymmärtäminen piti silti tehdä itse, 
+koska eihän AI pystyy suoraan tehdä näitä.
+
+Mahdollisiin huoliin tai kysymyksiin liittyen, sinulle Elina: 
+ymmärrän hyvin, miksi opettajat voivat nykyään pohtia, kuinka paljon opiskelijat saavat apua tekoälytyökaluista (vaikka ei sitä kieletään), 
+Itse asiassa koodauksen tulevaisuus on tekoäly, ja on fiksua oppia käyttämään sitä omaksi hyödykseen.
+ja kunnioitan tätä huolta täysin. Oma tavoitteeni oli kuitenkin aidosti oppia ja kehittää taitojani, 
+ei välttää työn tekemistä. Jos kopioisin kaiken suoraan ymmärtämättä mitään, 
+minä en silti oikeasti oppisin tai pärjäisin myöhemmin oikeassa työympäristössä. 
+Minulle sellaisessa ei olisi mitään järkeä, koska koulun tarkoitus on oppia oikeita taitoja tulevaisuutta varten.
+Basically On todella typerää käydä koulua kolme vuotta ja lopulta olla oppimatta mitään, koska aikuisena vain kopioi ja liittää kaiken.
+
+Kuten tiedät, olen jo 18-vuotias, mikä tarkoittaa, että minulla on oma vastuu ja vapaus koulutukseeni liittyvissä valinnoissa kuten eroaminen koulusta milloin vaan haluan.
+Siksi suhtaudun tähän vakavasti ja haluan kehittyä rehellisesti sen sijaan, 
+että valehtelisin itselleni näennäisellä oppimisella tai kopioidulla työllä.
+On fiksumpaa jättää koulu kesken kuin valehdella itselleen kolme vuotta.
+
+Koen tehneeni oman osuuteni työskentelemällä projektin eteen paljon ja pyytämällä myös neuvojasi jo alusta lähtien 
+saavuttaakseni S+ tavoitteeni. Nyt pyytäisin ystävällisesti ohjaustasi siitä, mitä voisin vielä parantaa, 
+jos jotkin osa alueet eivät vielä riitä korkeimpaan arviointiin. Jos koet, että jokin ei vielä ole S+ tasolla, 
+arvostaisin aidosti neuvoja siitä, mitä minun tulisi kehittää, jotta voisin työskennellä tavoitetta kohti oikealla tavalla.
+
+Kiitos.

@@ -3,171 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kauppa projecti</title>
+    <title>kouluprojecti</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="module" src="java.js"></script>
   </head>
-
   <body>
-    <header>
-      <h1>My Shop</h1>
-      <div onclick="openCart()" style="cursor: pointer">
-        Cart:
-        <span id="cart-count">0</span>
-        | Total: €
-        <span id="cart-total">0</span>
+    <div class="top-banner">
+      <header>
+        <h1>BC Shop</h1>
+        <div>
+          <span id="auth-status">Not logged in</span>
+          <button onclick="window.openCart()">
+            Cart(<span id="cart-count">0</span>) - €<span id="cart-total"
+              >0</span
+            >
+          </button>
+        </div>
+      </header>
+      <div class="auth-area">
+        <h3>Login or Sign Up</h3>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="window.signUp()">Sign Up</button>
+        <button onclick="window.signIn()">Login</button>
+        <button onclick="window.signOut()">Logout</button>
       </div>
-    </header>
+    </div>
+
+    <div class="top-bar">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search..."
+        onkeyup="window.searchProducts()"
+      />
+      <br />
+      <button onclick="window.filterProducts('home')">Home</button>
+      <button onclick="window.filterProducts('shirts')">Shirts</button>
+      <button onclick="window.filterProducts('pants')">Pants</button>
+      <button onclick="window.filterProducts('shoes')">Shoes</button>
+    </div>
 
     <main>
-      <div class="top-bar">
-        <input
-          type="text"
-          id="search"
-          placeholder="Search..."
-          onkeyup="searchProducts()"
-        />
-
-        <br />
-        <button onclick="filterProducts('home')">Home</button>
-        <button onclick="filterProducts('shirts')">Shirts</button>
-        <button onclick="filterProducts('pants')">Pants</button>
-        <button onclick="filterProducts('shoes')">Shoes</button>
-      </div>
-
       <div class="products">
         <div class="product" data-category="shirts">
+          <img src="placeholder.png" />
           <h3>Blue Shirt</h3>
           <p>€10</p>
-
-          <button onclick="addToCart('Blue Shirt', 10)">Add</button>
+          <button onclick="window.addToCart('Blue Shirt', 10)">Add</button>
         </div>
-
         <div class="product" data-category="shirts">
+          <img src="placeholder.png" />
           <h3>Black Hoodie</h3>
           <p>€15</p>
-          <button onclick="addToCart('Black Hoodie', 15)">Add</button>
+          <button onclick="window.addToCart('Black Hoodie', 15)">Add</button>
         </div>
-
         <div class="product" data-category="shirts">
+          <img src="placeholder.png" />
           <h3>White Shirt</h3>
           <p>€12</p>
-          <button onclick="addToCart('White Shirt', 12)">Add</button>
+          <button onclick="window.addToCart('White Shirt', 12)">Add</button>
         </div>
-
         <div class="product" data-category="shirts">
+          <img src="placeholder.png" />
           <h3>Green Hoodie</h3>
           <p>€18</p>
-          <button onclick="addToCart('Green Hoodie', 18)">Add</button>
+          <button onclick="window.addToCart('Green Hoodie', 18)">Add</button>
         </div>
-
         <div class="product" data-category="shirts">
+          <img src="placeholder.png" />
           <h3>Red Jacket</h3>
           <p>€25</p>
-          <button onclick="addToCart('Red Jacket', 25)">Add</button>
+          <button onclick="window.addToCart('Red Jacket', 25)">Add</button>
         </div>
-
         <div class="product" data-category="pants">
+          <img src="placeholder.png" />
           <h3>Gray Pants</h3>
           <p>€12</p>
-          <button onclick="addToCart('Gray Pants', 12)">Add</button>
+          <button onclick="window.addToCart('Gray Pants', 12)">Add</button>
         </div>
-
         <div class="product" data-category="pants">
+          <img src="placeholder.png" />
           <h3>Blue Jeans</h3>
           <p>€8</p>
-          <button onclick="addToCart('Blue Jeans', 8)">Add</button>
+          <button onclick="window.addToCart('Blue Jeans', 8)">Add</button>
         </div>
-
         <div class="product" data-category="pants">
+          <img src="placeholder.png" />
           <h3>Black Jeans</h3>
           <p>€14</p>
-          <button onclick="addToCart('Black Jeans', 14)">Add</button>
+          <button onclick="window.addToCart('Black Jeans', 14)">Add</button>
         </div>
-
         <div class="product" data-category="pants">
+          <img src="placeholder.png" />
           <h3>Sport Pants</h3>
           <p>€20</p>
-          <button onclick="addToCart('Sport Pants', 20)">Add</button>
+          <button onclick="window.addToCart('Sport Pants', 20)">Add</button>
         </div>
-
         <div class="product" data-category="pants">
+          <img src="placeholder.png" />
           <h3>Shorts</h3>
           <p>€9</p>
-          <button onclick="addToCart('Shorts', 9)">Add</button>
+          <button onclick="window.addToCart('Shorts', 9)">Add</button>
         </div>
-
         <div class="product" data-category="shoes">
+          <img src="placeholder.png" />
           <h3>Running Shoes</h3>
           <p>€20</p>
-          <button onclick="addToCart('Running Shoes', 20)">Add</button>
+          <button onclick="window.addToCart('Running Shoes', 20)">Add</button>
         </div>
-
         <div class="product" data-category="shoes">
+          <img src="placeholder.png" />
           <h3>Sport Shoes</h3>
           <p>€5</p>
-          <button onclick="addToCart('Sport Shoes', 5)">Add</button>
+          <button onclick="window.addToCart('Sport Shoes', 5)">Add</button>
         </div>
-
         <div class="product" data-category="shoes">
+          <img src="placeholder.png" />
           <h3>White Sneakers</h3>
           <p>€22</p>
-          <button onclick="addToCart('White Sneakers', 22)">Add</button>
+          <button onclick="window.addToCart('White Sneakers', 22)">Add</button>
         </div>
-
         <div class="product" data-category="shoes">
+          <img src="placeholder.png" />
           <h3>Black Boots</h3>
           <p>€30</p>
-          <button onclick="addToCart('Black Boots', 30)">Add</button>
+          <button onclick="window.addToCart('Black Boots', 30)">Add</button>
         </div>
-
         <div class="product" data-category="shoes">
+          <img src="placeholder.png" />
           <h3>Sandals</h3>
           <p>€11</p>
-          <button onclick="addToCart('Sandals', 11)">Add</button>
+          <button onclick="window.addToCart('Sandals', 11)">Add</button>
         </div>
-
         <div class="product" data-category="home">
+          <img src="placeholder.png" />
           <h3>Chair</h3>
           <p>€18</p>
-          <button onclick="addToCart('Chair', 18)">Add</button>
+          <button onclick="window.addToCart('Chair', 18)">Add</button>
         </div>
-
         <div class="product" data-category="home">
+          <img src="placeholder.png" />
           <h3>Table</h3>
           <p>€40</p>
-          <button onclick="addToCart('Table', 40)">Add</button>
+          <button onclick="window.addToCart('Table', 40)">Add</button>
         </div>
-
         <div class="product" data-category="home">
+          <img src="placeholder.png" />
           <h3>Lamp</h3>
           <p>€13</p>
-          <button onclick="addToCart('Lamp', 13)">Add</button>
+          <button onclick="window.addToCart('Lamp', 13)">Add</button>
         </div>
-
         <div class="product" data-category="home">
+          <img src="placeholder.png" />
           <h3>Bed</h3>
           <p>€60</p>
-          <button onclick="addToCart('Bed', 60)">Add</button>
+          <button onclick="window.addToCart('Bed', 60)">Add</button>
         </div>
-
         <div class="product" data-category="home">
+          <img src="placeholder.png" />
           <h3>Clock</h3>
           <p>€7</p>
-          <button onclick="addToCart('Clock', 7)">Add</button>
+          <button onclick="window.addToCart('Clock', 7)">Add</button>
         </div>
+      </div>
+
+      <div class="contact-section">
+        <h2>Report issue or suggestions</h2>
+        <form id="contact-form">
+          <textarea
+            id="contact-message"
+            rows="3"
+            placeholder="Your message..."
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </main>
 
     <div id="cart-modal">
       <h2>Your Cart</h2>
-      <div id="cart-items"></div>
-
-      <p>
-        Total: €
-        <span id="modal-total">0</span>
-      </p>
-      <button onclick="closeCart()">Close</button>
+      <div id="cart-items-list"></div>
+      <hr />
+      <p>Total: € <span id="modal-total">0</span></p>
+      <button onclick="window.buyNow()">Buy Now</button>
+      <button onclick="window.closeCart()">Close</button>
     </div>
-    <script src="java.js"></script>
   </body>
 </html>

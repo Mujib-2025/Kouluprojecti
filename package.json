@@ -1,0 +1,24 @@
+{
+  "name": "my-shop",
+  "version": "1.0.0",
+  "description": "kouluprojecti, jossa käytetty node, express ja backened",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mujib-2025/Kouluprojecti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mujib-2025/Kouluprojecti/issues"
+  },
+  "homepage": "https://github.com/Mujib-2025/Kouluprojecti#readme"
+}
